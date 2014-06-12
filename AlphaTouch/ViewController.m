@@ -17,9 +17,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view, typically from a nib
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    UIButton *myButton = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+    myButton.frame = CGRectMake(75, 100, 200, 50);
+    [myButton setTitle:@"Click here for magic?" forState:UIControlStateNormal];
+    [self.view addSubview:myButton];
+    [myButton addTarget:self action:@selector(makeBackgroundGreen) forControlEvents:UIControlEventTouchUpInside];
+
 }
 
+-(void) makeBackgroundGreen
+{
+    self.view.backgroundColor = [UIColor
+                                 greenColor];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
