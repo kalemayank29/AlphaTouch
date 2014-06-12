@@ -23,14 +23,17 @@
     myButton.frame = CGRectMake(75, 100, 200, 50);
     [myButton setTitle:@"Click here for magic?" forState:UIControlStateNormal];
     [self.view addSubview:myButton];
-    [myButton addTarget:self action:@selector(makeBackgroundGreen) forControlEvents:UIControlEventTouchUpInside];
+    [myButton addTarget:self action:@selector(makeBackgroundGreen:) forControlEvents:UIControlEventTouchUpInside];
 
 }
 
--(void) makeBackgroundGreen
+-(void) makeBackgroundGreen:(id) sender
 {
     self.view.backgroundColor = [UIColor
+                        
                                  greenColor];
+    NSLog(@"Changed Background with %@", sender);
+    [sender removeFromSuperview];
 }
 - (void)didReceiveMemoryWarning
 {
